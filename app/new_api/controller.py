@@ -5,6 +5,8 @@ from flask import current_app
 from .helper import (doSomething)
 from flask_jwt import jwt_required, current_identity
 from flask import jsonify
+from flask import render_template
+from app import templates
 
 
 class HealthCheck(MethodView):
@@ -21,3 +23,7 @@ class MockEndpoint(MethodView):
         current_app.logger.info("mock logg")
         return jsonify({"now": datetime.now(), "today": date.today(), "identity": {"id": current_identity.id}})
 
+class Index(MethodView):
+    def get(self):
+        current_app.logger.info("mock logg")
+        return render_template("index.html")
