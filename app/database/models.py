@@ -26,12 +26,10 @@ class Base(db.Model):
 class AppClients(Base):
     __tablename__ = 'app_clients'
 
-    id = db.Column(db.String(36), primary_key=True, default=uuid.uuid4())
+    id = db.Column(db.String(36), primary_key=True, default=uuid.uuid4)
     _password = db.Column(db.Text, nullable=False)
     name = db.Column(db.String(255), unique=True)
     scopes = db.Column(db.String)
-    age = db.Column(db.Integer)
-    position = db.Column(db.String(255))
 
     def __init__(self, name, password):
 

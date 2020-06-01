@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/alineayumi/.local/share/virtualenvs/desafio_ton-LCgHfg1i/bin/python",
+    "python.pythonPath": "/Users/alineayumi/.local/share/virtualenvs/desafio-ton-API-REST-hsQ8Zq8-/bin/python",
     "python.formatting.provider": "yapf",
     "python.formatting.yapfArgs": [
       "--style={ based_on_style: pep8, column_limit: 120 }"

@@ -1,0 +1,22 @@
+{% extends "admin/admin_template.html" %}
+
+{% import "macros/input_macros.html" as im %}
+
+{% block title %}Admin dashboard{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Admin dashboard</h1>
+            <h4>Novo Funcionário</h4>
+            <hr>
+            {{ im.input(label="Nome", name="name", id="name", placeholder="Insira o nome do funcionário") }}
+            {{ im.input(label="Idade", type="number", name="age", id="age", placeholder="Insira a idade") }}
+            {{ im.input(label="Cargo", name="position", id="position", placeholder="Insira o cargo") }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
