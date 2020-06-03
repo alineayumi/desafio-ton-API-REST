@@ -25,6 +25,7 @@ class MockEndpoint(MethodView):
         return jsonify({"now": datetime.now(), "today": date.today(), "identity": {"id": current_identity.id}})
 
 class Home(MethodView):
+    @requires_auth
     def get(self):
         return render_template("public/home.html")
 
