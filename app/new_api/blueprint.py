@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-from .controller import HealthCheck, MockEndpoint, Home, Dashboard, Login, SignUp
+from .controller import HealthCheck, MockEndpoint, Home, Dashboard, Login, SignUp, Add, Edit, Delete
 
 
 def setup_blueprint():
@@ -13,5 +13,8 @@ def setup_blueprint():
     bp.add_url_rule('/admin/dashboard', view_func=Dashboard.as_view('dashboard'))
     bp.add_url_rule('/login', view_func=Login.as_view('login'))
     bp.add_url_rule('/sign-up', view_func=SignUp.as_view('sign-up'))
+    bp.add_url_rule('/admin/add', view_func=Add.as_view('add'))
+    bp.add_url_rule('/admin/edit', view_func=Edit.as_view('edit'))
+    bp.add_url_rule('/admin/delete', view_func=Delete.as_view('delete'))
 
     return bp

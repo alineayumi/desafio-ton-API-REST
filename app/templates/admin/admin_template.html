@@ -47,6 +47,33 @@
 
     <main>
         {% block main %}{% endblock %}
+        <hr>
+        <div class="container">
+          <h2>Lista de funcionários</h2>
+      
+          <div class="table-responsive">
+              <table class="table">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>Id</th>
+                          <th>Nome</th>
+                          <th>Idade</th>
+                          <th>Cargo</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {% for person in employees %}
+                      <tr>
+                          <td>{{ person.id }}</td>
+                          <td>{{ person.name }}</td>
+                          <td>{{ person.age }}</td>
+                          <td>{{ person.position }}</td>
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+              </table>
+          </div>
+      </div>
     </main>
 
     <!-- Optional JavaScript -->

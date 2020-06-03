@@ -26,7 +26,7 @@ class Base(db.Model):
 class AppClients(Base):
     __tablename__ = 'app_clients'
 
-    id = db.Column(db.String(36), primary_key=True, default=uuid.uuid4)
+    id = db.Column(db.String(36), primary_key=True, default=uuid.uuid4())
     _password = db.Column(db.Text, nullable=False)
     name = db.Column(db.String(255), unique=True)
     scopes = db.Column(db.String)
@@ -41,3 +41,17 @@ class AppClients(Base):
 
     def set_password(self, plaintext_password):
         self._password = sha256_crypt.encrypt(plaintext_password)
+
+class Employees(Base):
+    __tablename__ = 'employees'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), unique=True)
+    age = db.Column(db.Integer)
+    position = db.Column(db.String(255))
+
+    def __init__(self, name, age, position):
+
+        self.name = name
+        self.age = age
+        self.position = position       

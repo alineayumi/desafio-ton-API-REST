@@ -1,0 +1,60 @@
+{% extends "admin/admin_template.html" %}
+
+{% import "macros/input_macros.html" as im %}
+
+{% block title %}Admin dashboard{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Admin dashboard</h1>
+            <hr>
+
+            <div class="btn-group" role="group" aria-label="Ações com banco de dados">
+                <button onclick="location.href='/new-api/admin/add';" type="button" class="btn btn-secondary">Adicionar</button>
+                <button onclick="location.href='/new-api/admin/edit';" type="button" class="btn btn-secondary">Editar</button>
+                <button onclick="location.href='/new-api/admin/delete';" type="button" class="btn btn-secondary">Excluir</button>
+            </div>
+
+            <hr>
+
+            <form action="/new-api/admin/edit" method="POST">
+            
+                <div class="form-group">
+                    <label>Id</label>
+                    <input class="form-control" type="number" name="id" value="{{ id_ }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+            </form>
+            
+            <hr>
+
+            <form action="/new-api/admin/edit" method="POST">
+                <input type="hidden" name="_method" value="PUT" />
+            
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input class="form-control" type="text" name="name" value="{{ name_ }}">
+                </div>
+            
+                <div class="form-group">
+                    <label>Idade</label>
+                    <input class="form-control" type="number" name="age" value="{{ age_ }}">
+                </div>
+            
+                <div class="form-group">
+                    <label>Cargo</label>
+                    <input class="form-control" type="text" name="position" value="{{ position_ }}">
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

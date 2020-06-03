@@ -1,6 +1,6 @@
 import os
 from app import create_app, db
-from app.database import AppClients
+from app.database import AppClients#, Employees
 from flask_script import Manager, Shell
 
 app = create_app(os.getenv("APP_SETTINGS", default="config.ProductionConfig"))
